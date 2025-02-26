@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: vu270uaec-go-gitops
+  description: This is GitOps manifest for vu270uaec-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=vu270uaec-go
+    backstage.io/kubernetes-id: vu270uaec-go 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: vu270uaec-go-gitops   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:vu270uaec-go
